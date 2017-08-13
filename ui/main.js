@@ -1,4 +1,4 @@
-var button = document.getElementById('counter');
+var button = document.getElementById('count');
 button.onclick = function() {
   counter = counter + 1;
   var span = document.getElementById('count');
