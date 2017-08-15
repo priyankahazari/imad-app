@@ -5,12 +5,51 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var content = {
+    title: 'Sample App/Artical',
+    heading: 'The 1st article',
+    date: 'aug 10',
+    content: <p> 'this is my first article console project that i am doing on my system and shld c whether it works or not'</p>
+};
+function createTemplate (data) {
+    var title: data.title;
+    var heading: data.heading;
+    var date: data.date;
+    var content: data.content;
+var htmlTemplate =
+'<html>
+    <head>
+        <title>${title}</title>
+               <link href="/ui/style.css" rel="stylesheet" />
+        </head>
+        <body>
+            <div class="container">
+              <div>
+                <a href="/">back</a>
+              </div>
+              <hr/>
+                  <h2>
+                    ${heading}
+                </h2>
+                <div>
+                    ${date}
+                </div>
+                ${content}
+                    
+        </div>
+        </body>
+
+</html>
+';
+return htmlTemplate;
+}
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
 app.get('/1.html', function(req, res) {
-    res.sendFile(path.join(__dirname, 'ui', '1.html'));
+    res.send(path.join(createTemplate(SampleApp));
 });
 
 app.get('/artical2', function(req, res) {
