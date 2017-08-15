@@ -49,7 +49,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/1.html', function(req, res) {
-    res.send(path.join(createTemplate(SampleApp));
+    res.send(createTemplate(SampleApp));
 });
 
 app.get('/artical2', function(req, res) {
