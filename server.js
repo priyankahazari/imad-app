@@ -5,11 +5,11 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var content = {
+var artical1 = {
     title: 'Sample App/Artical',
     heading: 'The 1st article',
     date: 'aug 10',
-    content: <p> 'this is my first article console project that i am doing on my system and shld c whether it works or not'</p>
+    content: '<p> this is my first article console project that i am doing on my system and shld c whether it works or not</p>'
 };
 function createTemplate (data) {
     var title: data.title;
