@@ -17,12 +17,12 @@ function createTemplate (data) {
     var date = data.date;
     var content = data.content;
     
-    var htmlTemplate = '
+    var htmlTemplate = ''
     <html>
         <head>
             <title>${title}</title>
                    <link href="/ui/style.css" rel="stylesheet" />
-            </head>
+                   </head>
             <body>
                 <div class="container">
                   <div>
@@ -41,7 +41,7 @@ function createTemplate (data) {
             </body>
     
     </html>
-    ';
+    ' ;
     return htmlTemplate;
 }
 
