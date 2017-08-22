@@ -12,40 +12,46 @@ var article1 = {
     content: '<p>this is my first article console project that i am doing on my system and shld c whether it works or not</p>'
                     
 };
-
-var htmlTemplate = `
-<html>
-            <head>
-                <title>${title}</title>
-                       <link href="/ui/style.css" rel="stylesheet" />
-                </head>
-                <body>
-                    
-                      <div>
-                        <a href="/">back</a>
-                      </div>
-                      <hr/>
-                          <h2>
-                            ${heading}
-                        </h2>
+function createTemplate (data) {
+    var title = data.title;
+    var date = data.date;
+    var heading = data.heading;
+    var content = data.content;
+    var htmlTemplate = `
+    <html>
+                <head>
+                    <title>${title}</title>
+                           <link href="/ui/style.css" rel="stylesheet" />
+                    </head>
+                    <body>
+                        
+                          <div>
+                            <a href="/">back</a>
+                          </div>
+                          <hr/>
+                              <h2>
+                                ${heading}
+                            </h2>
+                            <div>
+                                ${date}
+                            </div>
                         <div>
-                            ${date}
+                                ${content}
                         </div>
-                    <div>
-                            ${content}
-                    </div>
-                </body>
-
-</html>
-
-
-`;
+                    </body>
+    
+    </html>
+    
+    
+    `;
+    return htmlTemplate;
+}    
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
 app.get('/1.html', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', '1.html'));
+  res.send(createTemplate(article1));
 });
 
 
