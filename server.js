@@ -16,12 +16,12 @@ app.get('/1.html', function (req, res) {
 });
 
 
-app.get('/artical2', function(req, res) {
-    res.sendFile(path.join(__dirname, 'ui', '2.html'));
+app.get('/2.html', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', '2.html'));
 });
 
-app.get('/artical3', function(req, res) {
-    res.sendFile(path.join(__dirname, 'ui', '3.html'));
+app.get('/3.html', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', '3.html'));
 });
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
