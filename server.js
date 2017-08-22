@@ -1,7 +1,14 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
-
+var pool = require('pg').pool;
+var config = {
+    user: 'priyankahazari5' ,
+    database: 'priyankahazari5' ,
+    host: 'db.imad.hasura-app.io' ,
+    port: '5432' ,
+    password: process.env.DB-PASSWORD
+};
 var app = express();
 app.use(morgan('combined'));
 
@@ -11,39 +18,7 @@ var article1 = {
     date: 'aug 10',
     content: '<p> this is my first article console project that i am doing on my system and shld c whether it works or not</p>'
 };
-function createTemplate(data) {
-  var title = 'data.title',
-  var date = 'data.date',
-  var heading = 'data.heading',
-  var content = 'data.content',
-    
-};
-  var htmlTemplate = "
-  
-  <html>
-            <head>
-            <title>${title}</title>
-                       <link href="/ui/style.css" rel="stylesheet" />
-                </head>
-                <body>
-                    <div class="container">
-                      <div>
-                        <a href="/">back</a>
-                      </div>
-                      <hr/>
-                          <h2>
-                           ${heading}
-                        </h2>
-                        <div>
-                            ${date}
-                        </div>
-                        ${content}
-                </div>
-                </body>
-        
-        </html>"
-        
- };
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
