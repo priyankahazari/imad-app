@@ -30,16 +30,11 @@ app.get('/first table-db', function (req, res) {
     
 });
 app.get('/1.html', function(req, res) {
-    res.send(createTemplate(SampleApp));
+    res.send('this is article one');
 });
 
 app.get('/artical2', function(req, res) {
     res.sendFile(path.join(__dirname, 'ui', '2.html'));
-});
-var counter = 0;
-app.get('/counter', function (req, res) {
-    counter = counter + 1;
-    res.send(counter.toString());
 });
 
 app.get('/artical3', function(req, res) {
