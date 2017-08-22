@@ -5,7 +5,13 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-
+var article1 = {
+    title: 'Sample App1/artical' ,
+    heading: 'The 1st article' ,
+    date: 'aug 10' ,
+    content: '<p>this is my first article console project that i am doing on my system and shld c whether it works or not</p>'
+                    
+};
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
