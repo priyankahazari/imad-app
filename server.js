@@ -15,7 +15,7 @@ app.use(morgan('combined'));
 
 
 var pool = new pool(config);
-app.get('/first table-db', function (req, res) {
+app.get('/first-db', function (req, res) {
     pool.query("SELECT * FROM first table", function (err, result)
     {
       if (err) {
