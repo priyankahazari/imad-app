@@ -30,7 +30,7 @@ app.get('/first table-db', function (req, res) {
     
 });
 app.get('/1.html', function(req, res) {
-    res.send('this is article one');
+    res.sendFile(path.join(_dirname, 'ui', '1.html'));
 });
 
 app.get('/artical2', function(req, res) {
