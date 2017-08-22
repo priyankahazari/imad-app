@@ -5,12 +5,27 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var article1 = {
+var manyarticles = {
+    'article1': {
     title: 'Sample App1/artical' ,
     heading: 'The 1st article' ,
     date: 'aug 10' ,
     content: '<p>this is my first article console project that i am doing on my system and shld c whether it works or not</p>'
                     
+},
+    'article2': {
+    title: 'Sample App2/artical2' ,
+    heading: 'The 2nt article' ,
+    date: 'aug 5 2017' ,
+    content: '<p>this is my second article console project that i am doing on my system and shld c whether it works or not</p>'
+                
+},
+    'article3': {
+    title: 'Sample App3/artical3' ,
+    heading: 'The 3rt article' ,
+    date: 'aug 20 2017' ,
+    content: '<p>this is my third article console project that i am doing on my system and shld c whether it works or not</p>'
+          },
 };
 function createTemplate (data) {
     var title = data.title;
@@ -50,18 +65,13 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/1.html', function (req, res) {
-  res.send(createTemplate(article1));
+app.get('/:articleName', function (req, res) {
+    var articleName = req.params.articleName;
+  res.send(createTemplate(articles[articleName]));
 });
 
 
-app.get('/2.html', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', '2.html'));
-});
 
-app.get('/3.html', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', '3.html'));
-});
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
