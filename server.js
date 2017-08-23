@@ -5,22 +5,22 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var manyarticles = {
-    'article1': {
+var articles = {
+    '1': {
     title: 'Sample App1/artical' ,
     heading: 'The 1st article' ,
     date: 'aug 10' ,
     content: '<p>this is my first article console project that i am doing on my system and shld c whether it works or not</p>'
                     
 },
-    'article2': {
+    '2': {
     title: 'Sample App2/artical2' ,
     heading: 'The 2nt article' ,
     date: 'aug 5 2017' ,
     content: '<p>this is my second article console project that i am doing on my system and shld c whether it works or not</p>'
                 
 },
-    'article3': {
+    '3': {
     title: 'Sample App3/artical3' ,
     heading: 'The 3rt article' ,
     date: 'aug 20 2017' ,
@@ -65,9 +65,9 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/:manyarticles', function (req, res) {
+app.get('/:articleName', function (req, res) {
     var manyarticles = req.params.manyarticles;
-  res.send(createTemplate(articles[manyarticles]));
+  res.send(createTemplate(articles[articleName]));
 });
 
 
