@@ -100,8 +100,6 @@ app.get('/articless/:articleName', function (req, res) {
          }
      }
  });
-  
-  
 });
 
 
