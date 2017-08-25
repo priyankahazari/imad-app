@@ -83,7 +83,7 @@ function hash (input, salt) {
 app.post('/create-login', function (req, res) {
    var username = req.body.username;
    var password = req.body.password;
-   var salt = crypto.RandomBytes(128).toString('hex');
+   var salt = crypto.randomBytes(128).toString('hex');
    var dbString = hash(password, salt); 
    pool.query('INSERT INTO "login" (username, password) VALUES ($1, $2)', [username, dbString], function(req, result) {
        if (err) {
