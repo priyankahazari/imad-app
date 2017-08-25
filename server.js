@@ -80,7 +80,7 @@ function hash (input, salt) {
     return ['pbkdf2Sync', '10000', salt, hashed.toString('hex')].join('$');
 }
 
-app.post('/create-login', function (req, res) {
+app.post('/create-user', function (req, res) {
    var username = req.body.username;
    var password = req.body.password;
    var salt = crypto.randomBytes(128).toString('hex');
