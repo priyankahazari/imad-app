@@ -107,7 +107,9 @@ app.post('/login', function (req, res) {
                var dbString = result.rows[0].password;
                var salt = dbString.split('$')[2];
                var hashedPassword = hash(password, salt);
-               res.send('user successfully created: ' + username);
+               if (hashedPassword === dbString) 
+                   res.send('credentials are correct');
+               
            }
            
            
