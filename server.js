@@ -77,7 +77,7 @@ function hash (input, salt) {
     return ['pbkdf2Sync', '10000', salt, hashed.toString('hex')].join('$');
 }
 
-app.get('/create-user', function (req, res) {
+app.post('/create-user', function (req, res) {
    var salt = crypto.getRandomBytes(128).toString('hex');
    var dbString = hash(password, salt);
    pool.query('INSERT INTO "user" (usernamem, password) VALUES ($1, $2)', [username, dbString], function (err, result) {
