@@ -7,7 +7,7 @@ submit onclick = function () {
             if (request.status === 200) {
                 console.log('logged in successful');
                 alert("logged in");
-            } else if request.status === 403) {
+            } else if (request.status === 403) {
                 alert('username/password is incorrect');
             } else if (request.status === 500) {
                 alert('somthng went wrong');
@@ -18,7 +18,6 @@ submit onclick = function () {
         
     };
     var username = document.getElementById('username').value;
-    
     var password = document.getElementById('password').value;
     console.lod('username');
     console.lod('password');
