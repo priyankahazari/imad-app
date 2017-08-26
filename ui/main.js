@@ -5,7 +5,7 @@ submit.onclick = function () {
     {
         if (request.readystate === XMLHttpRequest.DONE) {
             if (request.status === 200) {
-                alert ('logged in');
+                alert('logged in');
             } else if (request.status === 403) {
                 alert('username/password is incorrect');
             } else if (request.status === 500) {
