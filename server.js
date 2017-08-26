@@ -132,6 +132,10 @@ app.get('/check-login', function (req, res) {
        res.send('u are not logged in');
    }
 });
+app.get('/logout', function (req, res) {
+    delete req.session.auth;
+    res.send('U are logged out form the program');
+});
 app.get('/hash/:input', function ( req, res) {
    var hashedString = hash(req.params.input, 'this-is-a-simple-salt');
    res.send(hashedString);
