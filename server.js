@@ -107,12 +107,12 @@ app.post('/login', function (req, res) {
                var dbString = result.rows[0].password;
                var salt = dbString.split('$')[2];
                var hashedPassword = hash(password, salt);
-               if (hashedPassword === dbString) 
+             if (hashedPassword === dbString) {
                    res.send('credentials are correct');
-               
-           }
-           
-           
+           } else {
+               res.send(403).send('username/password is invalid');
+           }     
+         }
        }
    });
 });
