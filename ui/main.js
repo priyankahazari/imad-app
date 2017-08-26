@@ -19,8 +19,8 @@ submit.onclick = function () {
     };
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
-    console.lod('username');
-    console.lod('password');
+    console.log('username');
+    console.log('password');
     request.open('POST', 'http://priyankahazari5.imad.hasura-app.io/login', true);
     request.setRequestHeader;
     request.send(JSON.stringify({username: username, password: password}));
