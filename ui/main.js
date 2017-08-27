@@ -25,7 +25,7 @@ submit.onclick = function () {
     request.send(JSON.stringify({username: username, password: password}));
     
 };
-var register = document.getElementById('reg_btn');
+var register = document.getElementById('register_btn');
 register.onclick = function () {
    var request = new XMLHttpRequest();
     request.onreadystatechange = function ()
@@ -33,6 +33,7 @@ register.onclick = function () {
         if (request.readystate === XMLHttpRequest.DONE) {
             if (request.status === 200) {
                 alert('logged in');
+                register.value = 'registered!';
             } else if (request.status === 403) {
                 alert('username/password is incorrect');
             } else if (request.status === 500) {
