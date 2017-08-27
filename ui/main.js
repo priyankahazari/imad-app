@@ -36,7 +36,7 @@ register.onclick = function () {
                 register.value = 'registered!';
             } else if (request.status === 403) {
                 alert('username/password is incorrect');
-                register.value = 'Register';
+                register.value = 'register';
             } else if (request.status === 500) {
                 alert('somthng went wrong');
             }
