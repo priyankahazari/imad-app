@@ -26,3 +26,19 @@ submit.onclick = function () {
     
 };
 var register = document.getElementById('reg_btn');
+register.onclick = function () {
+   var request = new XMLHttpRequest();
+    request.onreadystatechange = function ()
+    {
+        if (request.readystate === XMLHttpRequest.DONE) {
+            if (request.status === 200) {
+                alert('logged in');
+            } else if (request.status === 403) {
+                alert('username/password is incorrect');
+            } else if (request.status === 500) {
+                alert('somthng went wrong');
+            }
+        }
+            
+
+};
