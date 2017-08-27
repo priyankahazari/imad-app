@@ -52,3 +52,5 @@ var username = document.getElementById('username').value;
     request.send(JSON.stringify({username: username, password: password}));
     register.value = 'registering.........';
 };
+request.open('GET', '/check-login', true);
+request.send('null');
