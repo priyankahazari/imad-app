@@ -36,6 +36,7 @@ register.onclick = function () {
                 register.value = 'registered!';
             } else if (request.status === 403) {
                 alert('username/password is incorrect');
+                register.value = 'Register';
             } else if (request.status === 500) {
                 alert('somthng went wrong');
             }
@@ -50,7 +51,7 @@ var username = document.getElementById('username').value;
     request.open('POST', 'http://priyankahazari5.imad.hasura-app.io/login', true);
     request.setRequestHeader('Content-Type', 'application/json');
     request.send(JSON.stringify({username: username, password: password}));
-    register.value = 'registering.........';
+    register.value = 'Registering.........';
 };
 request.open('GET', '/check-login', true);
 request.send('null');
